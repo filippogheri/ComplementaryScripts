@@ -47,14 +47,13 @@ china357.df <-
               aggVar = con.df[, "STS_ID"],
               aggMethod = con.df[, "AGGREGATION"],
               weightVar = con.df[, "STS_ID_WEIGHT"],
-#               thresholdProp = rep(0, length(con.df[, "STS_ID"])),
               applyRules = FALSE,
               keepUnspecified = FALSE)
 colnames(china357.df)[grep("M49_FAOST_CODE", colnames(china357.df))] <- "FAOST_CODE"
 china357.df[, "Area"] <- "Territory"
-countryName <- 
-  subset(na.omit(unique(FAOcountryProfile[, c("FAOST_CODE", "FAO_TABLE_NAME")])))
-china357.df <- merge(china357.df, countryName, all.x = TRUE, by = "FAOST_CODE")
+# countryName <- 
+#   subset(na.omit(unique(FAOcountryProfile[, c("FAOST_CODE", "FAO_TABLE_NAME")])))
+# china357.df <- merge(china357.df, countryName, all.x = TRUE, by = "FAOST_CODE")
 ## Replace the values in the database
 country.df <- country.df[country.df[,"FAOST_CODE"] != 357,]
 country.df <- rbind(country.df, china357.df)
@@ -71,11 +70,11 @@ china351.df <-
           var = colnames(china351.df)[-grep("FAOST_CODE|Year|Area|FAO_TABLE_NAME", colnames(china351.df))],
           take = "complete")
 
-# Aggregate china 357 -----------------------------------------------------
+# Aggregate china 351 -----------------------------------------------------
 
 ## Relation data frame
 china351 <- 
-  data.frame(FAOST_CODE = c(357,96,128), M49_FAOST_CODE = rep(351, times = 3))
+  data.frame(FAOST_CODE = c(351, 357,96,128), M49_FAOST_CODE = rep(351, times = 4))
 ## Aggregation
 china351.df <- 
   Aggregation(data = china351.df,
@@ -83,14 +82,13 @@ china351.df <-
               aggVar = con.df[, "STS_ID"],
               aggMethod = con.df[, "AGGREGATION"],
               weightVar = con.df[, "STS_ID_WEIGHT"],
-#               thresholdProp = rep(0, length(con.df[, "STS_ID"])),
               applyRules = FALSE,
               keepUnspecified = FALSE)
 colnames(china351.df)[grep("M49_FAOST_CODE", colnames(china351.df))] <- "FAOST_CODE"
 china351.df[, "Area"] <- "Territory"
-countryName <- 
-  subset(na.omit(unique(FAOcountryProfile[, c("FAOST_CODE", "FAO_TABLE_NAME")])))
-china351.df <- merge(china351.df, countryName, all.x = TRUE, by = "FAOST_CODE")
+# countryName <- 
+#   subset(na.omit(unique(FAOcountryProfile[, c("FAOST_CODE", "FAO_TABLE_NAME")])))
+# china351.df <- merge(china351.df, countryName, all.x = TRUE, by = "FAOST_CODE")
 ## Replace the values in the database
 country.df <- country.df[country.df[,"FAOST_CODE"] != 351,]
 country.df <- rbind(country.df, china351.df)
