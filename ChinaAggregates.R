@@ -57,7 +57,7 @@ china357.df[, "Area"] <- "Territory"
 ## Replace the values in the database
 country.df <- country.df[country.df[,"FAOST_CODE"] != 357,]
 country.df <- rbind(country.df, china357.df)
-rm(list = c("china357.df", "china357", "countryName"))
+rm(list = c("china357.df", "china357"))
 
 # Remove duplicates for China 351 -----------------------------------------
 
@@ -92,4 +92,4 @@ china351.df[, "Area"] <- "Territory"
 ## Replace the values in the database
 country.df <- country.df[country.df[,"FAOST_CODE"] != 351,]
 country.df <- rbind(country.df, china351.df)
-rm(list = c("china351.df", "china351", "countryName"))
+rm(list = c("china351.df", "china351"))
