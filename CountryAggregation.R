@@ -6,7 +6,7 @@
 ## Notes:
 ###########################################################################
 
-CountryAggregation <- function(dataset = preAgg.df)}{
+# CountryAggregation <- function(dataset = preAgg.df)
   country.df <- 
     Aggregation(data = dataset, aggVar = con.df[,"STS_ID"], 
                 thresholdProp = con.df[,"THRESHOLD_PROP"], 
@@ -17,6 +17,6 @@ CountryAggregation <- function(dataset = preAgg.df)}{
                 keepUnspecified = FALSE)
   colnames(country.df)[grep("M49_FAOST_CODE", colnames(country.df))] = "FAOST_CODE"
   country.df[, "Area"] <- "Territory"
-  country.df
-}
+#   country.df
+# }
 
