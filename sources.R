@@ -28,25 +28,25 @@ sources = function(dissemination = diss.df, metadata = meta.lst$FULL,
     sourceVect = manual
   } else {
     for (i in variables) {
-      objmeta = subset(metadata, DATA_KEY == i)
+      objmeta = subset(metadata, STS_ID == i)
       if (is.na(objmeta[, "SOURCE"])) {
         stop("Please, specify the source.")
       } else {
         conVar = subset(construction, 
-                        subset = DATA_KEY_PROC == i & 
+                        subset = STS_ID == i & 
                           CONSTRUCTION_TYPE == "share")
         if (nrow(conVar) == 1) {
-          if (is.na(conVar[, "DATA_KEY_CONSTR2"])) {
+          if (is.na(conVar[, "STS_ID_CONSTR2"])) {
             sourceVect[length(sourceVect)+1] = 
               subset(metadata, 
-                     subset = DATA_KEY == conVar[, "DATA_KEY_CONSTR1"])[, "SOURCE"]
+                     subset = STS_ID == conVar[, "STS_ID_CONSTR1"])[, "SOURCE"]
           } else {
             sourceVect[length(sourceVect)+1] = 
               subset(metadata, 
-                     subset = DATA_KEY == conVar[, "DATA_KEY_CONSTR1"])[, "SOURCE"]            
+                     subset = STS_ID == conVar[, "STS_ID_CONSTR1"])[, "SOURCE"]            
             sourceVect[length(sourceVect)+1] = 
               subset(metadata, 
-                     subset = DATA_KEY == conVar[, "DATA_KEY_CONSTR2"])[, "SOURCE"]
+                     subset = STS_ID == conVar[, "STS_ID_CONSTR2"])[, "SOURCE"]
           }
         } else {
           sourceVect[length(sourceVect)+1] = objmeta[, "SOURCE"]
