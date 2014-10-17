@@ -10,7 +10,7 @@
 plot_info = function(dissemination = diss.df, metadata = meta.lst$FULL, plotName) {
   specPlot = subset(dissemination, subset = OBJECT_NAME == plotName)
   variables = specPlot[, paste("DATA_KEY", 1:10, sep = "")]
-  variables = variables[!is.na(variables)]
+  variables = variables[!is.na(variables) & variables != ""]
   ## Y axis
   if (specPlot[, "PLOT_OBJECTIVE"] %in% c("top_20_bar", "bot_20_bar", "top_bot_bar",
                                           "top_dot", "bot_dot", "top_bot_dot")) {
