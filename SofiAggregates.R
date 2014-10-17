@@ -21,7 +21,7 @@ SOFIsubReg.df =
               keepUnspecified = FALSE)
 colnames(SOFIsubReg.df)[grep("SOFI_SUB_REG_CODE", colnames(SOFIsubReg.df))] = "FAOST_CODE"
 ## Specify the area
-SOFIsubReg.df$Area = "SOFI sub region"
+SOFIsubReg.df$Area = "SOFISubRegion"
 ## Add country names
 SOFIsubReg.df = 
   merge(SOFIsubReg.df, 
@@ -46,7 +46,7 @@ SOFIotherReg.df =
               keepUnspecified = FALSE)
 colnames(SOFIotherReg.df)[grep("SOFI_OTHER_REG_CODE", colnames(SOFIotherReg.df))] = "FAOST_CODE"
 ## Specify the area
-SOFIotherReg.df$Area = "SOFI other region"
+SOFIotherReg.df$Area = "SOFIOtherRegion"
 ## Add country names
 SOFIotherReg.df = 
   merge(SOFIotherReg.df, 
@@ -71,7 +71,7 @@ SOFImacroReg.df =
               keepUnspecified = FALSE)
 colnames(SOFImacroReg.df)[grep("SOFI_MACRO_REG_CODE", colnames(SOFImacroReg.df))] = "FAOST_CODE"
 ## Specify the area
-SOFImacroReg.df$Area = "SOFI macro region"
+SOFImacroReg.df$Area = "SOFIMacroRegion"
 ## Add country names
 SOFImacroReg.df = 
   merge(SOFImacroReg.df, 
@@ -96,7 +96,7 @@ SOFIdevReg.df =
               keepUnspecified = FALSE)
 colnames(SOFIdevReg.df)[grep("SOFI_DVDDVG_REG_CODE", colnames(SOFIdevReg.df))] = "FAOST_CODE"
 ## Specify the area
-SOFIdevReg.df$Area = "SOFI development region"
+SOFIdevReg.df$Area = "SOFIDevelopmentRegion"
 ## Add country names
 SOFIdevReg.df = 
   merge(SOFIdevReg.df, 
@@ -121,7 +121,7 @@ SOFIworld.df =
               keepUnspecified = FALSE)
 colnames(SOFIworld.df)[grep("SOFI_WORLD_REG_CODE", colnames(SOFIworld.df))] = "FAOST_CODE"
 ## Specify the area
-SOFIworld.df$Area = "SOFI world"
+SOFIworld.df$Area = "SOFIWorld"
 ## Add country names
 SOFIworld.df = 
   merge(SOFIworld.df, 
