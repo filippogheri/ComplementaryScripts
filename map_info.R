@@ -54,7 +54,7 @@ map_info = function(dissemination = diss.df, mapName, data, nCol = 5, mapArea,
   
   ## scaling
   scaling = ifelse(!is.na(specMap[, "QUANTITY"]), specMap[, "QUANTITY"], NA)
-  scaling = 1/ifelse (!is.na(scaling), translateUnit(scaling), 1)
+  scaling = 1/ifelse (!is.na(scaling) & scaling != "", translateUnit(scaling), 1)
   
   ## data
   timeSlot = ifelse(!is.na(specMap[, "INTERVAL"]), specMap[, "INTERVAL"], NA)
