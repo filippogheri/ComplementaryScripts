@@ -46,7 +46,8 @@ plot_info = function(dissemination = diss.df, metadata = meta.lst$FULL, plotName
   if (!is.na(specPlot[, "Y_LAB"])) {
     yPlotLab = specPlot[, "Y_LAB"]
   } else {
-    ou = ifelse(!is.na(specPlot[, "DISS_ORIG_UNIT"]), specPlot[, "DISS_ORIG_UNIT"], specPlot[, "ORIG_UNIT"])
+    ou = ifelse(!is.na(specPlot[, "DISS_ORIG_UNIT"]) & 
+                  specPlot[, "DISS_ORIG_UNIT"] != "", specPlot[, "DISS_ORIG_UNIT"], specPlot[, "ORIG_UNIT"])
     if (!is.na(specPlot[, "QUANTITY"])) {
       yPlotLab = paste(specPlot[, "QUANTITY"], ou, sep = " ")
     } else {
