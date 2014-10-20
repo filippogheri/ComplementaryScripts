@@ -62,7 +62,7 @@ plot_info = function(dissemination = diss.df, metadata = meta.lst$FULL, plotName
     xPlotLab = NULL
   }
   ## scaling
-  scaling = 1/ifelse (!is.na(specPlot[, "QUANTITY"]), translateUnit(specPlot[, "QUANTITY"]), 1)
+  scaling = 1/ifelse (!is.na(specPlot[, "QUANTITY"]) & specPlot[, "QUANTITY"] != "", translateUnit(specPlot[, "QUANTITY"]), 1)
   ## size
   size = specPlot[, "OBJECT_LAYOUT"]
   ## type of plot
