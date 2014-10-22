@@ -46,8 +46,8 @@ captions = function(dissemination = diss.df, objectName, output, manual = NULL) 
                             " (", year, ")", sep = "")
           }
         } else {
-          ou = ifelse(!is.na(object[, "DISS_ORIG_UNIT"]), object[, "DISS_ORIG_UNIT"], object[, "ORIG_UNIT"])
-          if (!is.na(object[, "QUANTITY"])) {
+          ou = ifelse(!is.na(object[, "DISS_ORIG_UNIT"]) & object[, "DISS_ORIG_UNIT"] != "", object[, "DISS_ORIG_UNIT"], object[, "ORIG_UNIT"])
+          if (!is.na(object[, "QUANTITY"]) & object[, "QUANTITY"] != "") {
             unit = paste(object[, "QUANTITY"], ou, sep = " ")
           } else {
             unit = ou
