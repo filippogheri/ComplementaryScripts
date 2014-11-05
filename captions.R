@@ -34,7 +34,7 @@ captions = function(dissemination = diss.df, objectName, output, manual = NULL) 
                 object[, "GROUP"] == "Year" & is.na(object[, "INTERVAL"])) {
             year = paste(object[, "YEAR_START"], object[, "YEAR_END"], sep = " and ")
           } else {
-            year = paste(object[, "YEAR_START"], object[, "YEAR_END"], sep = "-")
+            year = paste(object[, "YEAR_START"], object[, "YEAR_END"], sep = " to ")
           }
         }
         if (object[, "OBJECT_TYPE"] == "CHART") {
